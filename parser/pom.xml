@@ -72,7 +72,7 @@
         </plugins>
     </build>
     <scm>
-    	<url>https://github.com/jlmoya/lexer</url>
-    	<developerConnection>jlmoya@gmail.com</developerConnection>
+        <url>https://github.com/jlmoya/lexer</url>
+        <developerConnection>jlmoya@gmail.com</developerConnection>
     </scm>
 </project>
