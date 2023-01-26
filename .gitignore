@@ -21,3 +21,23 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Folders to ignore
+/**/node_modules
+/**/classes
+/**/target
+/**/.data
+/**/bin
+/**/.idea
+/**/.settings
+/**/.project
+/**/.classpath
+/**/.checkstyle
+/**/.log
+/**/.gradle
+/**/*.iml
+/**/.vscode
+/**/.pmd
+/**/.tern-project
+/**/.fake
+/**/build

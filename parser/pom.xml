@@ -1,0 +1,78 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cc.sosonline.example</groupId>
+    <artifactId>parser</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>parser</name>
+
+    <properties>
+        <java.version>17</java.version>
+        <slf4j.version>2.0.6</slf4j.version>
+        <log4j2.version>2.19.0</log4j2.version>
+        <versions-maven-plugin.version>2.14.2</versions-maven-plugin.version>
+        <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <junit-jupiter-api.version>5.9.2</junit-jupiter-api.version>
+        <surefire-junit-platform.version>3.0.0-M8</surefire-junit-platform.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit-platform</artifactId>
+            <version>${surefire-junit-platform.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-clean-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+            </plugin>
+
+        </plugins>
+    </build>
+    <scm>
+    	<url>https://github.com/jlmoya/lexer</url>
+    	<developerConnection>jlmoya@gmail.com</developerConnection>
+    </scm>
+</project>
