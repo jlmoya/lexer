@@ -12,15 +12,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Unit test for simple App.
  */
 public class AppTest {
+//    Parser parser = new Parser("1+2");
+//        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " + parser.eval());
+//    parser = new Parser("3*2");
+//        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " + parser.eval());
+//    parser = new Parser("3/6");
+//        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " + parser.eval());
+//    parser = new Parser("21 - 4");
+//        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " + parser.eval());
+//    parser = new Parser("3 plus 6");
+//        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " + parser.eval());
+//    parser = new Parser("6 ; 1");
+//        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " + parser.eval());
 
-    @Test
-    @DisplayName("Should print hello world!")
-    void mainShouldPrintHelloWorld() {
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
-
-        App.main(new String[]{});
-
-        assertEquals("Hello World!\n", outContent.toString());
-    }
 }
