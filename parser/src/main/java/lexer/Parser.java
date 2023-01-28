@@ -15,11 +15,11 @@ public class Parser {
         ch = (++pos < str.length()) ? str.charAt(pos) : -1;
     }
 
-    private boolean eat(int charToEat) {
+    private boolean lookup(int charToLookup) {
         while (ch == ' ') {
             nextChar();
         }
-        if (ch == charToEat) {
+        if (ch == charToLookup) {
             nextChar();
             return true;
         }
@@ -36,17 +36,15 @@ public class Parser {
     }
 
     /**
-     * Grammar:
-     * expression = term | expression `+` term | expression `-` term
-     * term = factor | term `*` factor | term `/` factor
-     * factor = `+` factor | `-` factor | number
+     * Grammar: expression = term | expression `+` term | expression `-` term term = factor | term
+     * `*` factor | term `/` factor factor = `+` factor | `-` factor | number
      */
     private Double parseExpression() {
         Double x = parseTerm();
         for (; ; ) {
-            if (eat('+')) {
+            if (lookup('+')) {
                 x += parseTerm(); // addition
-            } else if (eat('-')) {
+            } else if (lookup('-')) {
                 x -= parseTerm(); // subtraction
             } else {
                 return x;
@@ -57,9 +55,9 @@ public class Parser {
     private Double parseTerm() {
         Double x = parseFactor();
         for (; ; ) {
-            if (eat('*')) {
+            if (lookup('*')) {
                 x *= parseFactor(); // multiplication
-            } else if (eat('/')) {
+            } else if (lookup('/')) {
                 x /= parseFactor(); // division
             } else {
                 return x;
@@ -68,14 +66,13 @@ public class Parser {
     }
 
     private Double parseFactor() {
-        if (eat('+')) {
+        if (lookup('+')) {
             return +parseFactor(); // unary plus
         }
-        if (eat('-')) {
+        if (lookup('-')) {
             return -parseFactor(); // unary minus
         }
 
-        double x;
         int startPos = this.pos;
         if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
             while ((ch >= '0' && ch <= '9') || ch == '.') {
@@ -95,10 +92,10 @@ public class Parser {
         return parse();
     }
 
-	/**
-	 * @return the str
-	 */
-	public String getStr() {
-		return str;
-	}
+    /**
+     * @return the str
+     */
+    public String getStr() {
+        return str;
+    }
 }

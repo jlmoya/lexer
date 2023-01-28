@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>cc.sosonline.example</groupId>
+    <groupId>cc.sosonline.lexer</groupId>
     <artifactId>parser</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -14,8 +14,11 @@
         <java.version>17</java.version>
         <slf4j.version>2.0.6</slf4j.version>
         <log4j2.version>2.19.0</log4j2.version>
+        <exec-maven-plugin.version>3.1.0</exec-maven-plugin.version>
         <versions-maven-plugin.version>2.14.2</versions-maven-plugin.version>
+        <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>2.4</maven-jar-plugin.version>
         <junit-jupiter-api.version>5.9.2</junit-jupiter-api.version>
         <surefire-junit-platform.version>3.0.0-M8</surefire-junit-platform.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -55,6 +58,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
+                <version>${maven-clean-plugin.version}</version>
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -68,7 +72,21 @@
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>${versions-maven-plugin.version}</version>
             </plugin>
-
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${exec-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>lexer.App</mainClass>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <scm>
