@@ -10,7 +10,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 /**
- * TODO: Add description
+ * Main application class.
+ * File processing is done here.
  */
 public class App {
 
@@ -18,6 +19,7 @@ public class App {
         String inputFileName = "";
         String outputFileName = "";
 
+        // Validate input parameters
         if (args.length == 2) {
             inputFileName = args[0];
             outputFileName = args[1];
@@ -42,6 +44,7 @@ public class App {
             }
         }
 
+        // Process input file and create output file
         try (BufferedReader reader = new BufferedReader(
             new FileReader(inputFileName)); BufferedWriter writer = new BufferedWriter(
             new FileWriter(outputFileName))) {

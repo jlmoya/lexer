@@ -7,20 +7,22 @@ package lexer;
 public class Parser {
 
     /**
-     * 
+     * Holds the string to process
      */
     private final String str;
 
     /**
-     * 
+     * Keeps track of the current position in the string
      */
     private int pos = -1;
+    
     /**
-     * 
+     * Holds the current character
      */
     private int ch;
 
     /**
+     * Constructor
      * @param str
      */
     public Parser(String str) {
@@ -28,7 +30,7 @@ public class Parser {
     }
 
     /**
-     * 
+     * Advances pos and ch to the next character
      */
     private void nextChar() {
         ch = (++pos < str.length()) ? str.charAt(pos) : -1;
@@ -36,7 +38,7 @@ public class Parser {
 
     /**
      * @param charToLookup
-     * @return
+     * @return true if the next character is the one to lookup, skips spaces
      */
     private boolean lookup(int charToLookup) {
         while (ch == ' ') {
@@ -50,7 +52,7 @@ public class Parser {
     }
 
     /**
-     * @return
+     * @return the result of the evaluation
      */
     private Double parse() {
         nextChar();
@@ -62,7 +64,7 @@ public class Parser {
     }
 
     /**
-     * @return
+     * @return the result of the evaluation
      */
     private Double parseExpression() {
         Double x = parseTerm();
@@ -78,7 +80,7 @@ public class Parser {
     }
 
     /**
-     * @return
+     * @return the result of the evaluation
      */
     private Double parseTerm() {
         Double x = parseFactor();
@@ -94,7 +96,7 @@ public class Parser {
     }
 
     /**
-     * @return
+     * @return the result of the evaluation
      */
     private Double parseFactor() {
         if (lookup('+')) {
@@ -119,7 +121,7 @@ public class Parser {
     }
 
     /**
-     * @return
+     * @return the result of the evaluation to the caller
      */
     public Double eval() {
         pos = -1;
