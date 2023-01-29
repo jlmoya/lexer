@@ -1,20 +1,43 @@
 package lexer;
 
+/**
+ * @author Jose Luis Moya Sobrado
+ *
+ */
 public class Parser {
 
+    /**
+     * 
+     */
     private final String str;
 
+    /**
+     * 
+     */
     private int pos = -1;
+    /**
+     * 
+     */
     private int ch;
 
+    /**
+     * @param str
+     */
     public Parser(String str) {
         this.str = str;
     }
 
+    /**
+     * 
+     */
     private void nextChar() {
         ch = (++pos < str.length()) ? str.charAt(pos) : -1;
     }
 
+    /**
+     * @param charToLookup
+     * @return
+     */
     private boolean lookup(int charToLookup) {
         while (ch == ' ') {
             nextChar();
@@ -26,6 +49,9 @@ public class Parser {
         return false;
     }
 
+    /**
+     * @return
+     */
     private Double parse() {
         nextChar();
         Double x = parseExpression();
@@ -36,8 +62,7 @@ public class Parser {
     }
 
     /**
-     * Grammar: expression = term | expression `+` term | expression `-` term term = factor | term
-     * `*` factor | term `/` factor factor = `+` factor | `-` factor | number
+     * @return
      */
     private Double parseExpression() {
         Double x = parseTerm();
@@ -52,6 +77,9 @@ public class Parser {
         }
     }
 
+    /**
+     * @return
+     */
     private Double parseTerm() {
         Double x = parseFactor();
         for (; ; ) {
@@ -65,6 +93,9 @@ public class Parser {
         }
     }
 
+    /**
+     * @return
+     */
     private Double parseFactor() {
         if (lookup('+')) {
             return +parseFactor(); // unary plus
@@ -87,6 +118,9 @@ public class Parser {
         return Double.parseDouble(str.substring(startPos, this.pos));
     }
 
+    /**
+     * @return
+     */
     public Double eval() {
         pos = -1;
         return parse();
