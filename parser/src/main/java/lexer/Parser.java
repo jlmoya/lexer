@@ -111,7 +111,7 @@ public class Parser {
             while ((ch >= '0' && ch <= '9') || ch == '.') {
                 nextChar();
             }
-        } else if (ch >= 'a' && ch <= 'z') { // functions
+        } else if (ch >= 'a' && ch <= 'z') { // skip non-supported characters
             while (ch >= 'a' && ch <= 'z') {
                 nextChar();
             }
