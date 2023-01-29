@@ -68,7 +68,7 @@ public class App {
             }
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + e.getMessage());
-            System.out.println("Please, check the input file name exists.");
+            System.out.println("Please check the input file name exists.");
         } catch (IOException e) {
             e.printStackTrace();
         }
