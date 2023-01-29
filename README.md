@@ -38,7 +38,8 @@ a plus b
 The equals sign is used to denote the end of the input file and immediate termination of the parser.
 
 ## Output File Example
-There will be an output file at the same level as the input file with the following format:
+There will be an output file named `output.txt` (if no output parameter was given), 
+at the same level as the input file with the following format:
 
 ```
 121 - 21 = 100
