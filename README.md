@@ -37,3 +37,14 @@ a plus b
 
 The equals sign is used to denote the end of the input file and immediate termination of the parser.
 
+There will be an output file at the same level as the input file with the following format:
+
+```
+121 - 21 = 100
+Error
+1 + 5 = 6
+3 / 6 = 0.5
+21 - 4 = 17
+Error
+2*2 = 4
+```
