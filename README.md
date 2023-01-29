@@ -37,6 +37,7 @@ a plus b
 
 The equals sign is used to denote the end of the input file and immediate termination of the parser.
 
+## Output File Example
 There will be an output file at the same level as the input file with the following format:
 
 ```
