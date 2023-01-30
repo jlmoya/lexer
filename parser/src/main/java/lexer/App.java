@@ -6,6 +6,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
@@ -44,10 +47,13 @@ public class App {
             }
         }
 
+        ClassLoader classLoader = App.class.getClassLoader();
+        
         // Process input file and create output file
-        try (BufferedReader reader = new BufferedReader(
-            new FileReader(inputFileName)); BufferedWriter writer = new BufferedWriter(
-            new FileWriter(outputFileName))) {
+        try (InputStream inputStream = classLoader.getResourceAsStream(inputFileName);
+             InputStreamReader streamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+             BufferedReader reader = new BufferedReader(streamReader); 
+             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
             String line = reader.readLine();
 
             while (line != null) {

@@ -12,25 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Unit test for simple App.
  */
 public class AppTest {
-    //    Parser parser = new Parser("1+2");
-    //        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " +
-    // parser.eval());
-    //    parser = new Parser("3*2");
-    //        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " +
-    // parser.eval());
-    //    parser = new Parser("3/6");
-    //        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " +
-    // parser.eval());
-    //    parser = new Parser("21 - 4");
-    //        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " +
-    // parser.eval());
-    //    parser = new Parser("3 plus 6");
-    //        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " +
-    // parser.eval());
-    //    parser = new Parser("6 ; 1");
-    //        System.out.println(parser.eval() == null ? "Error" : parser.getStr() + " = " +
-    // parser.eval());
-
     @Test
     @DisplayName("Should read input file and write output file when the input file name is given")
     void mainWhenInputFileNameIsGiven() {
@@ -41,7 +22,11 @@ public class AppTest {
         App.main(args);
 
         assertEquals(
-            "121 - 21 = 100\n" 
+            "Only the file input parameter was given. Default output filename will be used.\n"
+            + "The following will be used:\n"
+            + "Input filename: input.txt\n"
+            + "Output filename: output.txt\n"
+            + "121 - 21 = 100\n" 
             + "Error\n" 
             + "1 + 5 = 6\n" 
             + "3 / 6 = 0.5\n" 
@@ -61,7 +46,10 @@ public class AppTest {
         App.main(new String[]{});
 
         assertEquals(
-            "121 - 21 = 100\n"
+            "No file input parameter were given. Default input/output filenames will be used.\n"
+            + "Input filename: input.txt\n"
+            + "Output filename: output.txt\n"
+            + "121 - 21 = 100\n"
             + "Error\n"
             + "1 + 5 = 6\n"
             + "3 / 6 = 0.5\n"
@@ -86,7 +74,11 @@ public class AppTest {
         App.main(args);
 
         assertEquals(
-            "121 - 21 = 100\n"
+            "Both file input parameters were given.\n"
+            + "The following will be used:\n"
+            + "Input filename: input.txt\n"
+            + "Output filename: output.txt\n"
+            + "121 - 21 = 100\n"
             + "Error\n"
             + "1 + 5 = 6\n"
             + "3 / 6 = 0.5\n"
