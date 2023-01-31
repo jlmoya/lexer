@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Unit test for simple App.
  */
 public class AppTest {
+
     @Test
     @DisplayName("Should read input file and write output file when the input file name is given")
     void mainWhenInputFileNameIsGiven() {
@@ -26,13 +27,13 @@ public class AppTest {
             + "The following will be used:\n"
             + "Input filename: input.txt\n"
             + "Output filename: output.txt\n"
-            + "121 - 21 = 100\n" 
-            + "Error\n" 
-            + "1 + 5 = 6\n" 
-            + "3 / 6 = 0.5\n" 
+            + "121 - 21 = 100\n"
+            + "Error\n"
+            + "1 + 5 = 6\n"
+            + "3 / 6 = 0.5\n"
             + "21 - 4 = 17\n"
-            + "Error\n" 
-            + "2*2 = 4\n", 
+            + "Error\n"
+            + "2*2 = 4\n",
             outContent.toString()
         );
     }
@@ -86,6 +87,6 @@ public class AppTest {
             + "Error\n"
             + "2*2 = 4\n",
             outContent.toString()
-);
+        );
     }
 }

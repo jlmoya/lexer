@@ -59,7 +59,7 @@ public class AppTest {
     @DisplayName(
         "Should return a set with one element when the two arrays have one element in common")
     void intersectionWhenTwoArraysHaveOneElementInCommonThenReturnASetWithOneElement() {
-        int[] nums1 = {1,2};
+        int[] nums1 = {1, 2};
         int[] nums2 = {2};
         App app = new App();
 

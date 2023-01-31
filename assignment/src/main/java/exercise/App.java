@@ -18,7 +18,7 @@ public class App {
         System.out.println("nums1: " + Arrays.toString(nums1));
         System.out.println("nums2: " + Arrays.toString(nums2));
         System.out.println("Output: " + intersection);
-        
+
         nums1 = new int[]{4, 9, 5};
         nums2 = new int[]{9, 4, 9, 8, 4};
         intersection = app.intersection(nums1, nums2);

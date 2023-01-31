@@ -2,7 +2,6 @@ package lexer;
 
 /**
  * @author Jose Luis Moya Sobrado
- *
  */
 public class Parser {
 
@@ -15,7 +14,7 @@ public class Parser {
      * Keeps track of the current position in the string
      */
     private int pos = -1;
-    
+
     /**
      * Holds the current character
      */
@@ -23,7 +22,6 @@ public class Parser {
 
     /**
      * Constructor
-     * @param str
      */
     public Parser(String str) {
         this.str = str;
@@ -37,7 +35,6 @@ public class Parser {
     }
 
     /**
-     * @param charToLookup
      * @return true if the next character is the one to lookup, skips spaces
      */
     private boolean lookup(int charToLookup) {
