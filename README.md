@@ -67,7 +67,7 @@ In order to use this application, you must first compile it. To do so, run the f
 mvn clean install
 ```
 
-There will be a jar file in the target directory of the parser project. To run the parser, run the following command:
+There will be a jar file in the target directory of the parser project. To run the application, run the following command:
 
 ```
 java -jar assignment/target/assignment-1.0-SNAPSHOT-jar-with-dependencies.jar
